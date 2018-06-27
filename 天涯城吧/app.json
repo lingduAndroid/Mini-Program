@@ -1,0 +1,34 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/city/city",
+    "pages/weather/weather",
+    "pages/message/message",
+    "pages/reply/reply",
+    "pages/news/news"
+  ],
+  "window": {
+    "backgroundTextStyle": "white",
+    "navigationBarBackgroundColor": "#09f",
+    "navigationBarTitleText": "天气查看",
+    "navigationBarTextStyle": "white"
+  },
+"tabBar": {
+  "list": [
+    {
+      "text": "主页",
+      "pagePath": "pages/index/index",
+      "iconPath": "image/main.jpg",
+      "selectedIconPath": "image/main.jpg"
+
+    },
+    {
+      "text": "消息",
+      "pagePath": "pages/news/news",
+      "iconPath": "image/news.jpg",
+      "selectedIconPath": "image/news.jpg"
+    }
+         ]
+    }
+}

@@ -1,0 +1,26 @@
+.city{
+  font-size: 30px;
+  background-color:#555;  
+  display: flex; /*弹性盒子布局*/
+  flex-direction: row ;/*横向布局*/
+  flex-wrap:  wrap  /*一条线排不下，从上到下换行*/
+}
+.buttonCity{
+  height:100rpx;
+  width:187.5rpx;
+}
+.container{
+  width: 60vh;
+  background-color:#FFF;  
+  display: flex ;   /*启动flex布局*/
+  flex-direction: row ;  /*元素横向布局*/
+  justify-content: space-around ;/*在主轴上伸缩性的居中 */ 
+}
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #fff;
+}
+.input{
+    border: 1px solid #B0C4DE; /*设置边框样式*/ 
+   padding: 5px;
+ }

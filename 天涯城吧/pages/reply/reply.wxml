@@ -1,0 +1,98 @@
+<scroll-view class="contain" style="height:10000rpx;">
+<view class="containMsg">
+<view class="row">
+<view style='width:180rpx'>
+ <image class="userinfo-avatar" src='{{msg[0].headPath}}'></image> 
+ </view>
+ <view style='margin-top:10px;width:380rpx'>
+<view class="nowrap">
+<text  style='font-size:20px;color:blue'>{{msg[0].user}}</text>
+</view>
+
+<view>
+<text style='font-size:11px'>{{msg[0].time}}</text>
+</view>
+</view>     
+         <image data-index="{{index}}" bindtap="upvoteBig" class='circle-big' src='/image/number.jpg'></image>         
+         <text style='float:right;margin-top:15px'>{{msg[0].number}}</text>           
+</view>
+<text style='margin-top:10px;font-size:20px'>{{msg[0].message}}</text>
+</view>
+<!-- 发送消息 -->
+    <view class="send-box">
+        <input bindinput="changeInputValue" class="input" type="text" value="{{inputVal}}" placeholder="回复" placeholder-class="place-input"/>
+        <button size="mini" type="primary" bindgetuserinfo="getUserInfo"  open-type="getUserInfo"  bindtap="sendMsg">发送</button>
+     </view>
+     <!-- 按点赞数排序switch控件 -->
+  <view style='height:60rpx;margin-top:20px;text-align:center'>
+     <text style='color:red;height:60rpx;line-height:30px'>按点赞数排序</text>
+     <switch style='float: right;' bindchange="switchChange"/>
+  </view>
+  <!-- 回复的消息 -->
+<view class="msg-box">
+<text class="msg-info" wx:if="{{messageData.length==0}}">暂无回复……一楼等着您^_^</text>
+     <view  class="list-view">   
+       <view class="item"  wx:for="{{messageData}}"  wx:key="{{index}}"> 
+       <!-- 回复的弹窗 -->
+       <modal style="display:{{show}};" title="回复" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input bindinput="changeInputValue" type='text' placeholder="回复{{replyPerson}}："  auto-focus/>  
+</modal> 
+      <view data-index="{{index}}" bindtap="showReply"> 
+ <!-- 头像名字时间点赞点赞数-->
+      <view class='row'>
+      <view style='width:180rpx'>
+      <image  class="userinfo-avatar" src="{{item.headPath}}" background-size="cover"></image>     
+      </view>
+      <view >
+      <view style='margin-top:8px'>
+       <text class="nowrap" >{{item.user}}</text>   
+       </view>
+       <view>
+       <text style='font-size:10px'>{{item.time}}</text>
+       </view>
+       </view>
+       <view style='margin-top:10px;width:220rpx;float:right;'>
+       <text style='float:right'>{{item.number}}</text>
+         <image data-index="{{index}}" bindtap="upvote" class='circle' src='/image/number.jpg'></image>            
+         </view>
+       </view>
+       
+       <view class='wrap'>   
+         <!-- <text wx:if="{{item.reply!='undefined'}}" style='font-weight:bold;'>回复{{item.reply}}:</text>              -->
+         <text class='wrap'>{{item.message}}</text>
+         </view>
+         </view>
+         <text  data-index="{{index}}" bindtap="reply"style="width:200rpx;color:blue">回复楼层</text>
+         <icon type="cancel" bindtap="DelMsg" data-index="{{index}}" class="close-btn"wx:if="{{item.user==userInfo.nickName}}"/>
+         <view wx:if="{{item.userReply!='undefined'}}" style='background-color:#CCC;font-size:13px'>
+         <text style='color:blue'>{{item.userReply}}</text>
+         <text style='margin-left:5px;margin-right:5px;'>回复</text>
+         <text style='color:blue'>{{item.user}}</text>
+         <text style='margin-left:5px'>: {{item.messageReply}}</text>
+         <view>
+          <text data-index="{{index}}" bindtap="getFloor" style='color:blue'>更多回复</text>
+         </view>
+         </view>
+         <!-- 楼层回复弹窗 -->
+         <modal style="display:{{showFloor}};" title="回复" confirm-text="提交" cancel-text="取消" bindcancel="cancelFloor" bindconfirm="confirmFloor">  
+    <input bindinput="changeInputValue" type='text' placeholder="回复{{replyPerson}}："  auto-focus/>  
+</modal>
+         <!-- 显示回复信息 -->
+         <scroll-view wx:if='{{showMsg}}' class="modal" >
+         <icon type="cancel" bindtap="cancelModal" class="close-btn"/>
+         <view wx:for="{{floorData}}"> 
+         <view  data-index="{{index}}" bindtap='replyFloor'>
+           <text style='color:blue;margin-left:20px;'>{{item.user}}</text>
+         <text style='margin-left:5px;margin-right:5px;'>回复</text>
+         <text style='color:blue'>{{item.reply}}</text>
+         <text style='margin-left:5px'>: {{item.message}}</text>
+         <text style='margin-left:10px;font-size:10px'>{{item.time}}</text>
+         </view>
+         </view> 
+         <view style='height:100rpx'>
+         </view>
+        </scroll-view>
+       </view>
+    </view>
+</view>
+</scroll-view>

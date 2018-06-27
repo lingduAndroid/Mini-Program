@@ -1,0 +1,11 @@
+<!-- logs.wxml
+<view class="container log-list">
+  <block wx:for="{{logs}}" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view> -->
+<view class="containln">
+<text>请重新输入正确的城市名</text>
+<button bindtap="return" style='color:red'>返回</button>
+<text>3秒后自动跳转返回</text>
+</view>

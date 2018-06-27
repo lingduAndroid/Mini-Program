@@ -1,0 +1,61 @@
+<scroll-view>
+<view style="width：750rpx;text-align:center;margin-top:50rpx" >
+<text style='font-size:80rpx'>系统消息</text>
+</view>
+<view style='height:200rpx;font-size:20px;margin-top:40rpx;text-align:center;' >
+<text style='color:blue' >上次进入城市</text>
+<button style='margin-top:20rpx' bindtap="cityToWeather" >{{userData[0].city}}</button>
+</view>
+<view wx:if="{{messageData.length==0&&msgData.length==0}}" style="width：750rpx;text-align:center;margin-top:350rpx">
+<text >暂时没有人回复您哦</text>
+</view>
+<view wx:if="{{messageData.length!=0||msgData.length!=0}}" style='height:60rpx;text-align:center;margin-top:10px'>
+     <text style='color:red;height:60rpx;line-height:30px;'>转到楼中楼回复</text>
+     <switch style='float: right;' bindchange="switchChange"/>
+   </view>
+<view wx:if="{{messageData.length==0&&msgData.length!=0&&!switchChange}}" style="text-align:center;color:red;margin-top:100px">
+<text >楼中楼有回复信息,滑动上方转到楼中楼回复</text>
+</view>
+<view wx:if="{{!switchChange}}" class="list-view">   
+       <view class="item"  wx:for="{{messageData}}"  wx:key="{{index}}">      
+       <view data-index="{{index}}" bindtap='click'>
+ <!-- 头像名字时间点赞点赞数-->
+      <view class='row'>
+      <view style='width:180rpx'>
+      <image  class="userinfo-avatar" src="{{item.headPath}}" background-size="cover"></image>     
+      </view>
+      <view >
+      <view style='margin-top:8px'>
+       <text class="nowrap" >{{item.user}}</text>   
+       </view>
+       <view>
+       <text style='font-size:10px'>{{item.time}}</text>
+       </view>
+       </view>
+       <view style='margin-top:10px;width:220rpx;float:right;'>
+       <text style='float:right'>{{item.number}}</text>
+         <image data-index="{{index}}" bindtap="upvote" class='circle' src='/image/number.jpg'></image>            
+         </view>
+       </view>
+       
+       <view class='wrap'>   
+         <text class='wrap'>{{item.message}}</text>
+         </view>
+         </view>
+         </view>
+    </view>
+
+<view wx:else style='margin-top:20px'>
+<view class="item" wx:for="{{msgData}}"> 
+         <view  data-index="{{index}}" bindtap='clickFloor'>
+           <text style='color:blue;margin-left:20px;'>{{item.user}}</text>
+         <text style='margin-left:5px;margin-right:5px;'>回复</text>
+         <text style='color:blue'>{{item.reply}}</text>
+         <text style='margin-left:5px'>: {{item.message}}</text>
+         <text style='margin-left:10px;font-size:10px'>{{item.time}}</text>
+         </view>
+         </view> 
+</view>
+
+
+</scroll-view>

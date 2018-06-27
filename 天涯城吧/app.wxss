@@ -1,0 +1,44 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.contain{
+  height: 100vh; 
+  display: flex;         /*启动flex布局*/
+  flex-direction:column;   /*纵向布局*/
+  justify-content: space-around ; /*水平方向伸缩性的居中*/
+  align-items: center;   /*垂直方向居中*/
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:40rpx;
+}
+.containln{
+  margin-top:350rpx;    /*顶部间距*/
+  display: flex;         /*启动flex布局*/
+  flex-direction:column;   /*纵向布局*/
+  align-items: center;   /*水平方向居中*/
+}
+.nowrap{
+  display:flex;
+  flex-wrap:nowrap;
+}
+.wrap{
+  display:flex;
+  flex-wrap:wrap;
+}
+.circle{
+    width: 350rpx;
+    height: 350rpx;
+    border: 0 solid #ffffff;
+    border-radius: 500px;
+    box-shadow: 4px 1px 1px #cccccc;
+}

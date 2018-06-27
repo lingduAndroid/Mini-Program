@@ -1,0 +1,52 @@
+<scroll-view class="contain" style="height:10000rpx">
+<text class="center" style="font-size:30px">{{city}}专栏</text>
+<view class="msg-box">
+ <!--留言-->
+     <view class="send-box">
+        <input bindinput="changeInputValue" class="input" type="text" value="{{inputVal}}" placeholder="给这座城市留下点什么吧……" placeholder-class="place-input"/>
+        <button size="mini" type="primary" bindgetuserinfo="getUserInfo"  open-type="getUserInfo"  bindtap="sendMsg">发送</button>
+     </view>
+     <view style='height:20rpx'></view>
+     <view style='text-align:center'>
+     <text style='font-size:40rpx'>------------一个人一座城------------</text>
+     </view>
+     <view style='height:60rpx;text-align:center;margin-top:10px'>
+     <text style='color:red;height:60rpx;line-height:30px;'>按点赞数排序</text>
+     <switch style='float: right;' bindchange="switchChange"/>
+   </view>
+     <!--留言列表-->
+     <text class="msg-info" wx:if="{{messageData.length==0}}">暂无留言……<text style='color:red;font-size:25px'>The First</text>  等着您^_^</text>
+     <view  class="list-view">   
+       <view class="item"  wx:for="{{messageData}}"  wx:key="{{index}}">  
+      <view data-index="{{index}}" bindtap="showReply">  
+      <!-- 头像昵称时间点赞点赞数       -->
+      <view class='row'>
+      <view style='width:180rpx'>
+      <image  class="userinfo-avatar" src="{{item.headPath}}" background-size="cover"></image>     
+      </view>
+      <view>
+      <view style='margin-top:8px'>
+       <text class="nowrap">{{item.user}}</text>   
+       </view>
+       <view>
+       <text style='font-size:10px'>{{item.time}}</text>
+       </view>
+       </view>
+       <view style='margin-top:10px;margin-left:12rpx'>
+       <text style='float:right;margin-bottom:25rpx'>{{item.number}}</text>
+         <image  class='circle' src='/image/number.jpg'></image>            
+         </view>
+       </view>
+       
+       <view class='wrap'>   
+         <!-- <text wx:if="{{item.reply!='undefined'}}" style='font-weight:bold;'>回复{{item.reply}}:</text>              -->
+         <text class='wrap'>{{item.message}}</text>
+         </view>
+         </view>
+         <text  data-index="{{index}}" bindtap="showReply"style="width:200rpx;color:blue">回帖</text>
+         <icon type="cancel" bindtap="DelMsg" data-index="{{index}}" class="close-btn"wx:if="{{item.user==userInfo.nickName}}"/>
+         <!-- <icon  type="cancel" hidden="false" bindtap="DelMsg" data-index="{{index}}" class="close-btn" /> -->
+       </view>
+    </view>
+    </view>
+</scroll-view>

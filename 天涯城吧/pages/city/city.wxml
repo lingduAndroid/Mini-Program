@@ -1,0 +1,20 @@
+<view style='height:200rpx;font-size:20px' >
+<text style='font-size:20px;margin-top:80rpx'>当前城市：</text>
+<!-- <open-data type="userCity" lang="zh_CN"></open-data> -->
+<button bindtap="cityToWeather" data-city-id="{{userInfo.city}}" >{{historyCity}}</button>
+</view>
+<text><open-data type="userCity"></open-data></text>
+<text style='font-size:20px;margin-bottom:30rpx'>查找城市：</text>
+<view>
+<input class="input" name="userName" placeholder="输入要查询的城市"  bindinput="cityEnquire"/>
+<button bindtap="select">查询</button>
+</view>
+<view class="textarea-wrp">
+      <textarea bindblur="bindTextAreaBlur" auto-height /> 
+    </view>   
+<text style='font-size:20px'>热门城市：</text>
+<view class="city">
+<view  wx:for="{{rankList}}" wx:key="{{index}}">
+<button bindtap="cityToWeather" class="buttonCity" data-city-id='{{item.id}}'> {{item.city}}</button>
+</view>
+</view>

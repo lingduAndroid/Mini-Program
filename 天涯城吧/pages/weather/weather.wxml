@@ -1,0 +1,37 @@
+<swiper class="contain" indicator-dots='true'> 
+<swiper-item  wx:for="{{swiperList}}">
+<view class="containlnWeather">
+
+<view style="height:50rpx"></view>
+<text>{{weatherData.location}}</text>
+<view style="height:50rpx"></view>
+<text>{{item.date}}</text>
+
+<view style="height:250rpx"wx:if="{{index==0}}">
+<view  style="height:40rpx"/> 
+<text style='font-size:60px'>{{weatherNow}}℃</text>
+</view>
+<view wx:else style="height:150rpx"> 
+ </view>
+<view style='height:100rpx'>
+<text style="width:230rpx">今日温度： </text>
+<text style='width:250rpx'>{{item.weatherTmp}}℃</text>
+</view>
+<view style='height:100rpx'>
+<text style='width:230rpx'>今日天气： </text>
+<text style='width:250rpx'>{{item.weatherCond}}</text>
+</view>
+<view style='height:100rpx'>
+<text style='width:230rpx'>今日气候： </text>
+<text style='width:250rpx'> {{item.weatherWind}}</text>
+</view>
+<view class="nowrap">
+<image style="height:100rpx;width:150rpx" src='/image/fingerToRight.jpg'></image>
+ <button  plain="true" bindtap="message" style="color:red;width:350rpx;height:100rpx">城市留言专栏</button>
+ <image style="height:100rpx;width:150rpx" src='/image/fingerToLeft.jpg'></image>
+</view>
+<view style='height:50rpx'></view>
+<text >温馨提示：及时关注天气加减衣物哦</text>
+</view>
+</swiper-item>
+</swiper>

@@ -1,0 +1,14 @@
+.log-list {
+  display: flex;
+  flex-direction: column;
+  padding: 100rpx;  /*顶部边距*/
+}
+.log-item {
+  margin: 10rpx; /*间距*/
+}
+.containln{
+  margin-top:350rpx;    /*顶部间距*/
+  display: flex;         /*启动flex布局*/
+  flex-direction:column;   /*纵向布局*/
+  align-items: center;   /*水平方向居中*/
+}

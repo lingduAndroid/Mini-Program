@@ -1,0 +1,97 @@
+.containMsg{
+  padding:20px;
+  display: flex;         /*启动flex布局*/
+  flex-direction:column;   /*纵向布局*/
+  /*justify-content: center; 水平方向居中*/
+  /* align-items: center;    垂直方向居中   */
+}
+.msg-box{
+    padding: 20px;
+  }
+  .send-box{
+    margin-left:10px; 
+    display: flex;
+  }
+  .input{
+    border: 1px solid #B0C4DE;
+    padding: 10px; /* 内边距 */
+     margin-left: 10px;  /*外边距  */
+ }
+ .msg-info{
+   display: block;
+   margin: 10px 0 0 0 ;
+   color: #339900;
+ 
+ }
+ .place-input{
+   color: salmon;
+ }
+ .list-view{
+   margin: 20px 0 0 0;
+ }
+ .item{
+   overflow: hidden;
+   border-bottom: 1px dashed #87CEFF;  
+   line-height: 30px;   /*不设置高度默认自适应*/
+ }
+ .text1{
+   float: left;
+ }
+ .close-btn{
+   float: right;
+   margin: 5px 5px 0 0;
+ }
+ .circle{
+    float:right;
+    margin-top:5rpx;
+    margin-right:15rpx;
+    width: 50rpx;
+    height: 50rpx;
+    border: 0 solid #ffffff;
+    border-radius: 500px;
+    box-shadow: 0px 0px 0px #cccccc;
+}
+.userinfo-avatar {
+  margin-top: 10px;
+  width: 128rpx;
+  height: 128rpx;
+  margin-right: 20rpx;
+  border-radius: 50%;
+}
+.row{
+  height: 150rpx;
+  display: flex;  
+  flex-direction: row; 
+  flex-wrap:nowrap; 
+  }
+  .circle-big{
+     margin-top:12px;
+    float:right;
+    margin-right:15rpx;
+    width: 60rpx;
+    height: 60rpx;
+    border: 0 solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px #cccccc;
+}
+.modal {
+  font-size: 13px;
+  margin: 25rpx;
+  width:700rpx;
+ overflow: hidden;
+ position: fixed;
+ bottom: 0;
+ left: 0;
+ z-index: 2000;
+ background: #fff;
+ background-color:#CCC;
+ padding-top: 20rpx;
+}
+.nowrap{
+    display: block;
+    color:blue;  
+    width:380rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}

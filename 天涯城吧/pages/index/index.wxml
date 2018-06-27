@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="contain">
+  <!-- <view class="userinfo"> -->
+    <!-- <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" plain="true"> 获取头像昵称 </button>
+    <block wx:else>
+      <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block> -->
+    
+    <text style="margin-top:30rpx;font-size:25px">天涯城吧</text>
+    <image class='circle' src='/image/icon.jpg'></image>
+  <!-- </view> -->
+  <!-- <view class="usermotto"> -->
+  <view>
+    <text>欢迎来到天涯城吧</text>
+    </view>
+    <view>
+    <text>给<text style='color:red;font-size:20px'>亲人</text>一份问候</text>
+    </view>
+    <text>对那个城市的<text style='color:red;font-size:20px'>TA</text>说点什么</text>
+    <button  wx:if="{{canIUse}}" bindgetuserinfo="getUserInfo" bindtap="jumpToSecondPage" plain="true" open-type="getUserInfo"  style="margin-top:20rpx;color:red;font-size:20px">{{motto}}</button>
+    <view style="height:50rpx"></view>
+  <!-- </view> -->
+</view>

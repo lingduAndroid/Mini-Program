@@ -1,0 +1,55 @@
+.msg-box{
+    padding: 20px;
+  }
+  .send-box{
+    display: flex;
+  }
+  .input{
+    border: 1px solid #B0C4DE;
+   padding: 20px;
+ }
+ .msg-info{
+   display: block;
+   margin: 10px 0 0 0 ;
+   color: #339900;
+ 
+ }
+ .place-input{
+   color: salmon;
+ }
+ .list-view{
+   margin: 20px;
+ }
+ .item{
+   overflow: hidden;
+   border-bottom: 1px dashed #87CEFF;  
+   line-height: 30px;   /*不设置高度默认自适应*/
+ }
+ .text1{
+   float: left;
+ }
+ .close-btn{
+   float: right;
+   margin: 5px 5px 0 0;
+ }
+ .circle{
+    float:right;
+    margin-top:5rpx;
+    margin-right:15rpx;
+    width: 50rpx;
+    height: 50rpx;
+    border: 0 solid #ffffff;
+    border-radius: 500px;
+    box-shadow: 0px 0px 0px #cccccc;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
+  border-radius: 50%;
+}
+.row{
+  display: flex;  
+  flex-direction: row;  
+  }
